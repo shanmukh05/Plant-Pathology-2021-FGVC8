@@ -1,6 +1,6 @@
 # Plant-Pathology-2021-FGVC8
 ### Identify the category of foliar diseases in apple trees
-
+## [Follow me on Kaggle to know my approach to other competitions :)](https://www.kaggle.com/shanmukh05)
 <h1>Details of the Project</h1>
 <p> Plant Pathology competition is a annual competition conducted by <b>FGVC8</b> to detect foilar diseases in Apple Plants. </p>
 
@@ -30,11 +30,11 @@ I approached the task in 3 ways
      - As the dataset is present in GCP, we can't access the images directly, We first need to decode the image using `image = tf.image.decode_jpeg(tf.io.read_file(filepath), channels=3)`
      - After loading the images, random augmentations are applied using `tf.image.random.` class.
      - Finally to prepare the datset for training, loaded images are converted to Tensorflow `tf.data.Dataset` format and adding `cache`, `prefetch` for faster loading of data. 
-     - [More details are in TPU notebook]().
+     - [More details are in TPU notebook](https://github.com/shanmukh05/Plant-Pathology-2021-FGVC8/blob/main/Plant%20Pathology%202021%20TPU%20training.ipynb).
   - GPU as Accelerator
      - `ImageDataGenerator` is used to apply several augmentations to images.
      - Images are loaded as datset using `flow_from_dataframe` function.
-     - [More details in GPU notebook]().
+     - [More details in GPU notebook](https://github.com/shanmukh05/Plant-Pathology-2021-FGVC8/blob/main/Plant%20Pathology%202021%20GPU%20training.ipynb).
 
 - ## Training 
   - In both cases (TPU,GPU) pretrained models present in `tf.keras.applications` are used.
@@ -51,5 +51,5 @@ I approached the task in 3 ways
 
 - ## Submission
   - Finally the best models are loaded and used to predict new labels.
-  - [More details in Inference Notebook]().
-  - [Sample submission csv file]() can be found here.
+  - [More details in Inference Notebook](https://github.com/shanmukh05/Plant-Pathology-2021-FGVC8/blob/main/Plant%20Pathology%202021%20Inference.ipynb).
+  - [Sample submission csv file](https://github.com/shanmukh05/Plant-Pathology-2021-FGVC8/blob/main/submission.csv) can be found here.
